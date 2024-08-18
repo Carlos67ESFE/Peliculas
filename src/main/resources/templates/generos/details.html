@@ -1,0 +1,23 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Detalles del generos</h1>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class = "col-sm-2" >ID</dt>
+            <dd class = "col-sm-10" th:text="${generos.id}"></dd>
+
+            <dt class = "col-sm-2">Nombre</dt>
+            <dd class = "col-sm-10" th:text="${generos.nombre}"></dd>
+
+
+        </dl>
+
+        <a th:href="@{/generos/edit/{id} (id = ${generos.id}) }" class="btn btn-outline-info">Editar</a> |
+        <a th:href="@{/generos}">Regresar</a>
+    </div>
+</div>

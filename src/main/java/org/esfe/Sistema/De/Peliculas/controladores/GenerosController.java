@@ -88,6 +88,6 @@ public class GenerosController {
     public String delete(Generos generos, RedirectAttributes attributes){
         generosServices.eliminarPorId(generos.getId());
         attributes.addFlashAttribute("msg", "Genero eliminado correctamente");
-        return "redirect:/genero";
+        return "redirect:/generos";
     }
 }
