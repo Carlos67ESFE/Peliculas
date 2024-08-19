@@ -1,0 +1,59 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Crear nuevo genero</h1>
+    <form th:action="@{/actores/save}" th:object="${actores}" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del actor/actriz" required>
+                </div>
+            </div>
+        </div>
+        <!-- Género -->
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="genero">Género</label>
+                <select class="form-control" th:field="*{genero}" id="genero" required>
+                    <option value="">Seleccione el género</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nacionalidad">Nacionalidad</label>
+                    <input type="text" class="form-control" th:field="*{nacionalidad}" id="nacionalidad" placeholder="Escriba la nacionalidad del actor/actriz" required>
+                </div>
+            </div>
+        </div>
+
+<div class="row">
+    <!-- Fecha de Nacimiento -->
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" th:field="*{fechaNacimiento}" id="fechaNacimiento" required>
+        </div>
+    </div>
+
+    <!-- Fecha de Fallecimiento -->
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="fechaFallecimiento">Fecha de Fallecimiento</label>
+            <input type="date" class="form-control" th:field="*{fechaFallecimiento}" id="fechaFallecimiento">
+        </div>
+    </div>
+</div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Guardar</button> |
+        <a th:href="@{/actores}">Regresar</a>
+    </form>
+</div>
