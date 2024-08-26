@@ -1,0 +1,33 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout">
+
+<div layout:fragment="content">
+    <h1>Detalles del director</h1>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class = "col-sm-2" >ID</dt>
+            <dd class = "col-sm-10" th:text="${directores.id}"></dd>
+
+            <dt class = "col-sm-2">Nombre</dt>
+            <dd class = "col-sm-10" th:text="${directores.nombre}"></dd>
+
+            <dt class = "col-sm-2">Genero</dt>
+            <dd class = "col-sm-10" th:text="${directores.genero}"></dd>
+
+            <dt class = "col-sm-2">Nacionalidad</dt>
+            <dd class = "col-sm-10" th:text="${directores.nacionalidad}"></dd>
+
+            <dt class = "col-sm-2">Fecha de Nacimiento</dt>
+            <dd class = "col-sm-10" th:text="${directores.fechaNacimiento}"></dd>
+
+            <dt class = "col-sm-2">Fecha de Fallecimiento</dt>
+            <dd class = "col-sm-10" th:text="${directores.fechaFallecimiento}"></dd>
+        </dl>
+
+        <a th:href="@{/directores/edit/{id} (id = ${directores.id}) }" class="btn btn-outline-info">Editar</a> |
+        <a th:href="@{/directores}">Regresar</a>
+    </div>
+</div>
